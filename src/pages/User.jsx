@@ -50,89 +50,46 @@ function User() {
                         Back To Search
                     </Link>
                 </div>
-
-                <div className='grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-3 mb-8 md:gap-8'>
-                    <div className='custom-card-image mb-6 md:mb-0'>
-                        <div className='rounded-lg shadow-xl card image-full'>
-                            <figure>
-                                <img src={avatar_url} alt=''/>
-                            </figure>
-                            <div className='card-body justify-end'>
-                                <h2 className='card-title mb-0'>
-                                    {name}
-                                </h2>
-                                <p className='flex-grow-0'>
-                                    {login}
-                                </p>
-                            </div>
+                <div className="grid grid-cols-2 mx-auto mb-6">
+                    <div className='grid justify-items-end mr-5 custom-card-image mb-6  md:mb-0 '>
+                        <div className='w-36  md:w-72 rounded-lg shadow-xl card image-full'>
+                            <a 
+                                href={html_url}
+                                target='_blank' 
+                                rel='noreferrer'
+                            >
+                                <figure>
+                                   <img src={avatar_url} alt=''/>
+                                </figure>
+                            </a>
                         </div>
                     </div>
-
-                    <div className='col-span-2'>
-                        <div className='mb-6'>
-                            <h1 className='text-3xl card-title'>
-                                {name}
-                                <div className='ml-2 mr-1 badge badge-success'>
-                                    {type}
+                    <div>
+                        <h1 className='text-3xl card-title'>
+                            {name}
+                            <div className='ml-2 mr-1 badge badge-success'>
+                                {type}
+                            </div>
+                            {hireable && (
+                                <div className='mx-1 badge badge-info'>
+                                    Hireable
                                 </div>
-                                {hireable && (
-                                    <div className='mx-1 badge badge-info'>
-                                        Hireable
-                                    </div>
-                                )}
-                            </h1>  
-                            <p>{bio}</p>
-                            <div className='mt-4 card-actions'>
-                                <a 
-                                    href={html_url} 
-                                    target='_blank' 
-                                    rel='noreferrer' 
-                                    className='btn btn-outline'
-                                >
-                                    Visit Github Profile
-                                </a>
-                            </div> 
+                            )}
+                        </h1>  
+                        <p>{bio}</p>
+                        <div className='mt-4'>                              
+                            <a href={`https://${blog}`}><div className='btn btn-outline mr-2 bg-violet-500 hover:bg-violet-400 text-white shadow-md'>Website</div></a>
+                            <a href={`https://twitter.com/${twitter_username}`}><div className='btn btn-outline ml-2 bg-violet-500 hover:bg-violet-400 text-white shadow-md'>Twitter</div></a>
                         </div>
-
-                        <div className='w-full rounded-lg shadow-md bg-base-100 stats'>
-                            {location && (
-                                <div className='stat'>
-                                    <div className='stat-title text-md'>
-                                        Location
-                                        <div className='text-lg stat-value'>
-                                            {location}
-                                        </div>
-                                    </div>
-                                </div>
-                            )}
-
-                            {blog && (
-                                <div className='stat'>
-                                    <div className='stat-title text-md'>
-                                        Website
-                                        <div className='text-lg stat-value'>
-                                            <a 
-                                                href={`https://${blog}`} 
-                                                target='_blank'
-                                                rel='noreferrer'>{blog}</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            )}
-
-                            {twitter_username && (
-                                <div className='stat'>
-                                    <div className='stat-title text-md'>
-                                        Twitter
-                                        <div className='text-lg stat-value'>
-                                            <a 
-                                                href={`https://twitter.com/${twitter_username}`} 
-                                                target='_blank'
-                                                rel='noreferrer'>{twitter_username}</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            )}
+                        <div className='mt-4 card-actions'>
+                            <a 
+                                href={html_url} 
+                                target='_blank' 
+                                rel='noreferrer' 
+                                className='btn btn-outline'
+                            >
+                                Visit Github Profile
+                            </a>
                         </div>
                     </div>
                 </div>
