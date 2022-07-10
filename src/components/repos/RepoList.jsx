@@ -4,10 +4,13 @@ import RepoItem from './RepoItem'
 function RepoList({repos}) {
   return (
     <div className='rounded-lg shadow-lg card bg-base-100'>
-        <div className='card-body'>
-            <h2 className='text-3xl my-4 font-bold card-title'>
+        <div className='flex justify-center mt-4 text-3xl font-bold card-title'>
+            <h2>
                 Latest Repositories
             </h2>
+        </div>
+        
+        <div className='grid grid-cols-3 gap-3 card-body'>
             {repos.map((repo) => (
                 <RepoItem key={repo.id} repo={repo}/>
             ))}
