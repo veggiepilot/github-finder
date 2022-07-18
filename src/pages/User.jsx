@@ -43,7 +43,7 @@ function User() {
 
     return (
         <>
-            <div className='w-full mx-auto sm:w-auto lg:w-10/12'>
+            <div className='w-full mx-auto sm:w-auto lg:w-10/12 bg-color-blue'>
                 <div className='mb-4'>
                     <Link to='/' className='btn btn-ghost'>
                         Back To Search
