@@ -43,15 +43,15 @@ function User() {
 
     return (
         <>
-            <div className='w-full mx-auto lg:w-10/12'>
+            <div className='w-full mx-auto sm:w-auto lg:w-10/12'>
                 <div className='mb-4'>
                     <Link to='/' className='btn btn-ghost'>
                         Back To Search
                     </Link>
                 </div>
-                <div className="grid grid-cols-2 mx-auto mb-6">
-                    <div className='grid justify-items-end mr-5 custom-card-image mb-6  md:mb-0 '>
-                        <div className='w-36  md:w-72 rounded-lg shadow-xl card image-full'>
+                <div className="grid grid-cols-1 md:grid-cols-2 mx-auto mb-6">
+                    <div className='grid justify-items-center md:justify-items-end mr-5 custom-card-image mb-6  md:mb-0 '>
+                        <div className='w-40 md:w-72 rounded-lg shadow-md card image-full'>
                             <a 
                                 href={html_url}
                                 target='_blank' 
@@ -63,7 +63,7 @@ function User() {
                             </a>
                         </div>
                     </div>
-                    <div>
+                    <div className='grid justify-items-center md:justify-items-start ml-2'>
                         <h1 className='text-3xl card-title'>
                             {name}
                             <div className='ml-2 mr-1 badge badge-success'>
@@ -80,7 +80,7 @@ function User() {
                             <a href={`https://${blog}`}><div className='btn btn-outline mr-2 bg-violet-500 hover:bg-violet-400 text-white shadow-md'>Website</div></a>
                             <a href={`https://twitter.com/${twitter_username}`}><div className='btn btn-outline ml-2 bg-violet-500 hover:bg-violet-400 text-white shadow-md'>Twitter</div></a>
                         </div>
-                        <div className='mt-4 card-actions'>
+                        <div className='mt-4 md:mt-1 card-actions'>
                             <a 
                                 href={html_url} 
                                 target='_blank' 
@@ -92,8 +92,8 @@ function User() {
                         </div>
                     </div>
                 </div>
-                <div className='w-full py-5 mb-6 rounded-lg shadow-md bg-base-100 stats card'>
-                    <div className='stat'>
+                <div className='grid sm:grid-cols-2 gap-3 grid-cols-1 justify-items-center '>
+                    <div className='stat justify-items-center sm:justify-items-end '>
                         <div className='stat-title pr-5'>
                             Followers
                         </div>
@@ -102,7 +102,7 @@ function User() {
                         </div>
                     </div>
 
-                    <div className='stat'>
+                    <div className='stat justify-items-center sm:justify-items-start'>
                         <div className='stat-title pr-5'>
                             Following
                         </div>
@@ -111,7 +111,7 @@ function User() {
                         </div>
                     </div>
 
-                    <div className='stat'>
+                    <div className='stat justify-items-center sm:justify-items-end'>
                         <div className='stat-title pr-5'>
                             Public Repos
                         </div>
@@ -120,7 +120,7 @@ function User() {
                         </div>
                     </div>
 
-                    <div className='stat'>
+                    <div className='stat justify-items-center sm:justify-items-start'>
                         <div className='stat-title pr-5'>
                             Public Gists
                         </div>
